@@ -60,7 +60,7 @@ Wenn ihr mehrere Fassungen vergleichen wollt, könnt ihr später Git zur Version
 
 Das Paket ordnet eure Angaben und Prüfmaßstäbe. Es prüft keine externen Fakten und garantiert keine korrekten Modellantworten. Die Methode im Formularbeispiel ist für die Übung erfunden. Sie ist kein anerkannter Fachstandard. Eine Prüfung von Recht, Barrierefreiheit oder technischer Funktion ersetzt sie nicht.
 
-Die beiden Abläufe wurden redaktionell simuliert. Ein tatsächlicher LLM-Test oder eine Nutzerstudie fand dafür nicht statt. Verständlichkeit für unerfahrene Leser, Verhalten einzelner Chatwerkzeuge und benötigte Zeit sind nicht gemessen. Der [redaktionelle Prüfbericht](redaktion/walkthrough.md) beschreibt die Prüfung und ihre Grenzen.
+Die beiden Abläufe wurden redaktionell simuliert. Anschließend hat ein Subagent beide Beispiele mit ursprünglicher und geänderter Vorgabe bearbeitet. In diesen vier Antworten wurden die geltenden Vorgaben berücksichtigt. Der einzelne zusammenhängende Lauf ersetzt keine Nutzerstudie und keinen Vergleich verschiedener Modelle. Verständlichkeit für unerfahrene Leser und benötigte Zeit sind nicht gemessen. Der [redaktionelle Prüfbericht](redaktion/walkthrough.md) beschreibt die Prüfung und ihre Grenzen.
 
 ## Vorschlag zur Lizenz
 
