@@ -1,67 +1,71 @@
-# Erste Schicht
+---
+status: entwurf
+geprueft_am: offen
+---
 
-Mit diesem Starterkit haltet ihr den Kontext für eine Aufgabe in einer lesbaren Datei fest. Ihr gebt die Datei zusammen mit einem Arbeitsauftrag in einen Chat. Nachdem ihr das Ergebnis geprüft habt, speichert ihr bestätigte Änderungen zurück. Beim nächsten Gespräch beginnt ihr mit dieser aktuellen Fassung.
+# Kontext-Starterkit
 
-Ihr braucht einen Texteditor, einen Ordner für eure Dateien und ein Chatwerkzeug, in das ihr Text einfügen könnt. Markdown ist einfacher Text mit Zeichen für Überschriften und Listen. Die Dateien mit der Endung `.md` könnt ihr auch ohne besondere Markdown-App bearbeiten. Obsidian, Git und ein Terminal sind für den Einstieg nicht nötig.
+Mit diesem Starterkit baut ihr einen eigenen Kontextbestand auf. Ihr beginnt mit einem Projekt oder eurem Fachwissen. Ein Interview fragt einzeln nach und erzeugt daraus zusammenhängende Markdown-Dateien. Das Kit ist ein redaktioneller Vorschlag; Veröffentlichung und Lizenzfreigabe stehen aus.
 
-## Wählt euer Anliegen
+## Ordner öffnen
 
-Wenn ihr die nächste Entscheidung in einem konkreten Vorhaben vorbereiten wollt, beginnt mit der [Projektvorlage](vorlagen/projekt.md). Das [fiktive Workshop-Beispiel](beispiele/projekt-workshop.md) zeigt eine ausgefüllte Fassung.
+Kopiert den gesamten Ordner `starterkit` an euren Arbeitsort. Öffnet ihn in Obsidian über „Ordner als Vault öffnen“. Alle Verweise verwenden relative Markdown-Links. Ihr braucht keine Plugins. Alternativ öffnet ihr die Dateien in einem Texteditor und speichert sie als UTF-8 mit der Endung `.md`.
 
-Wenn ihr eine eigene Arbeitsmethode wiederholt anwenden wollt, beginnt mit der [Fachwissensvorlage](vorlagen/fachwissen.md). Im [fiktiven Beispiel für Formulartexte](beispiele/fachwissen-formulartexte.md) stehen Maßstäbe und ein kommentierter Anwendungsfall.
+Die [Regeln mit Landkarte](regeln.md) erklären den Aufbau. Ebene 1 enthält eure Grundlagen und Methoden in `kontext/`. Ebene 2 beschreibt ein Vorhaben und seine Entscheidungen in `projekte/`. Ebene 3 hält den konkreten Auftrag in `aufgaben/` fest. Die Dateien mit `vorlage-` sind leer; das vollständig fiktive Designverzeichnis liegt getrennt in [beispiel/](beispiel/README.md).
 
-Für den ersten Einsatz genügt eine dieser Vorlagen. Die Beispiele sind vollständig erfunden. Auch die dort als festgelegt bezeichneten Angaben gelten ausschließlich innerhalb der Übung.
+## Wählt euren Einstieg
 
-## Von der Datei in den Chat und zurück
+Für ein konkretes Vorhaben öffnet ihr das [Projektinterview](prompts/einstieg-projekt.md). Für eine wiederverwendbare Methode öffnet ihr das [Fachwissensinterview](prompts/einstieg-fachwissen.md). Beide Wege erzeugen Grundlagen, einen Projektstand, eine Entscheidungsdatei und eine Aufgabe. Beim Fachwissen kommt eine Methodendatei hinzu. Die Projektdatei hält dann knapp den ersten Anwendungskontext fest. Ist kein Beschluss nötig, steht das ausdrücklich in der Entscheidungsdatei. Unbekanntes darf ausdrücklich offen bleiben.
 
-### 1. Legt eure Arbeitsdatei an
+### Mit Dateizugriff
 
-Kopiert die passende Vorlage im Dateimanager in euren Arbeitsordner. Nennt die Kopie etwa `mein-projekt.md` oder `mein-fachwissen.md`. Öffnet sie im Texteditor und ersetzt die Hinweise in eckigen Klammern durch eure Angaben. Speichert als einfachen Text mit der Endung `.md`. Wenn euer Editor formatierte Dokumente erstellt, wechselt zuerst in seinen Modus für reinen Text.
+Öffnet eure Kopie des Kit-Ordners als Arbeitsordner im gewählten Agentenwerkzeug. Begrenzt den Dateizugriff auf diesen Ordner. Fügt den Prompt aus dem gewählten Interview ein und setzt `MODUS: DATEIEN`. Der Prompt nennt alle zu lesenden Dateien. Ein neutrales `regeln.md` wird nicht von jedem Werkzeug automatisch geladen; deshalb fordert der Prompt das Lesen ausdrücklich an.
 
-Schreibt bei fehlenden Angaben ausdrücklich „Offen“ oder „Ungeprüfte Annahme“. Bei Fakten nennt ihr die Herkunft, etwa eine eigene Notiz oder eine vereinbarte Vorgabe. Prüft vor dem Einfügen in einen Chat, welche Inhalte ihr mit dem gewählten Dienst teilen dürft. Für die Übung könnt ihr direkt eine Kopie eines fiktiven Beispiels verwenden.
+Beantwortet jeweils die eine gestellte Frage. Sechs Kernfragen geben die Richtung vor; sobald eine erste Aufgabe bearbeitbar ist, bietet das Interview den Abschluss an. Weitere Fragen folgen nur bei entscheidenden Lücken. Bestehende Dokumente könnt ihr als freigegebene Auszüge bereitstellen. Nennt dabei die Herkunft und trennt belegte Angaben von Annahmen. Das Interview zeigt zum Schluss eine Zusammenfassung zur Bestätigung. Danach schreibt der Agent neue Dateien; vorhandene Fassungen darf er nur nach eurem ausdrücklichen Auftrag ersetzen. Kontrolliert die gespeicherten Inhalte im Editor.
 
-Ihr seid für den nächsten Schritt bereit, wenn die nächste Entscheidung oder der zu prüfende Text feststeht und die offenen Angaben erkennbar sind.
+### Mit Kopieren im Chat
 
-### 2. Gebt Datei und Arbeitsauftrag gemeinsam weiter
+Öffnet einen neuen Chat. Fügt zuerst den Prompt aus dem gewählten Interview ein und setzt `MODUS: CHAT`. Fügt in derselben Nachricht den vollständigen Inhalt von `regeln.md` und allen im Interview genannten Vorlagen ein. Schreibt vor jeden Dateiinhalt `DATEI: relativer/pfad.md` und danach `ENDE DATEI`. Ein Pfad allein übermittelt keinen Inhalt. Bei zu langen Nachrichten sendet ihr nummerierte Teile und schließt mit `MATERIAL VOLLSTÄNDIG` ab. Der Prompt wartet darauf, bevor er das Interview beginnt.
 
-Öffnet [startprompt.md](startprompt.md) und kopiert ausschließlich den Prompt für euren gewählten Einstieg. Öffnet einen neuen Chat und fügt den Prompt in das Eingabefeld ein. Ersetzt darin den Platzhalter zwischen `BEGINN KONTEXTDATEI` und `ENDE KONTEXTDATEI` durch den vollständigen Inhalt eurer Arbeitsdatei. Sendet beides als eine Nachricht.
+Nach eurer Bestätigung liefert der Chat je Datei den relativen Zielpfad und einen vollständigen Markdown-Codeblock. Legt diese Dateien im Kit-Ordner mit dem Texteditor an. Kopiert den Inhalt ohne die äußeren Codezäune, einschließlich des Dateikopfs zwischen `---`. Kontrolliert Dateiendung und Zielordner. Öffnet die gespeicherten Dateien erneut und folgt den Links. Der Chat hat eure lokalen Dateien nicht selbst gespeichert.
 
-Der Dateiname oder ein lokaler Dateipfad allein übermittelt den Inhalt nicht. Ihr müsst weder einen Ordner verbinden noch eine App einrichten. Falls euer Chatwerkzeug den Text wegen seiner Länge nicht annimmt, kürzt eure Arbeitsdatei auf die nötigen Angaben. Sendet sie dann erneut vollständig.
+## Erste Aufgabe bearbeiten
 
-### 3. Prüft den Vorschlag an eurer Datei
+Öffnet [Aufgabe bearbeiten](prompts/aufgabe-bearbeiten.md). Mit Dateizugriff nennt ihr den Pfad eurer erzeugten Aufgabe. Im Chat fügt ihr den vollständigen Inhalt der Regeln, der Aufgabe und ihrer verlinkten Grundlagen, Methode, Projektdatei und Entscheidung ein. Der Prompt nennt zuerst die verwendeten Quellen und bearbeitet dann den Auftrag. Ein offener Punkt bleibt offen, bis ihr ihn klärt.
 
-Beim Projekt prüft ihr, ob die vorgeschlagene Handlung dem Ziel und euren Prüfmaßstäben entspricht. Jede Begründung muss zu einer konkreten Angabe passen. Bleibt eine Annahme ungeprüft, muss die Antwort diese Unsicherheit erhalten. Ein Vorschlag für ein Format ist noch keine Entscheidung von euch.
+Vergleicht das Ergebnis mit den Abnahmekriterien der Aufgabe. Prüft Aussagen und Quellen selbst. Lasst bei einem Fehler die betroffene Stelle mit Begründung überarbeiten. Wenn entscheidende Angaben fehlen, stoppt ihr und ergänzt den Kontext. Übernehmt nur von euch bestätigte Änderungen. Dokumentiert eine neue Entscheidung in der Entscheidungsdatei und aktualisiert den Projektstand samt nächstem Schritt. Setzt `geprueft_am` erst nach eurer inhaltlichen Prüfung auf deren tatsächliches Datum. Beginnt den nächsten Durchlauf mit den erneut eingelesenen Dateien.
 
-Beim Fachwissen prüft ihr jede vorgeschlagene Änderung am zugehörigen Maßstab. Vergleicht Ausgangstext und Vorschlag. Neue Aussagen über Abläufe oder Funktionen brauchen eine Quelle. Ein sprachlich passender Satz kann sachlich falsch sein. Vorschläge außerhalb eurer Methode müssen als solche erkennbar bleiben.
+## Bestand prüfen
 
-Wenn die Antwort etwas hinzuerfindet, verwirft ihr die betreffende Aussage. Gebt im Chat die Korrektur an und lasst nur den betroffenen Vorschlag neu formulieren. Fehlt eine entscheidende Information, klärt ihr diese zuerst. Ein Modell kann auch bei sorgfältigem Kontext Fehler machen.
+Für die Strukturprüfung braucht ihr Python 3.10 oder neuer, ohne Zusatzpakete. Öffnet ein Terminal im Kit-Ordner und führt aus:
 
-### 4. Speichert nur geprüfte Änderungen zurück
+```sh
+python3 pruefungen/pruefen.py .
+python3 -B -m unittest discover -s pruefungen -p 'test_*.py' -v
+```
 
-Lasst euch für eine Änderung den Abschnittsnamen sowie die alte und die vorgeschlagene neue Fassung zeigen. Der Startprompt fordert das bereits an. Vergleicht den Vorschlag mit eurer lokalen Datei. Entscheidet selbst, was ihr übernehmt, und bearbeitet nur diese Stelle im Texteditor. Wenn ihr nichts bestätigen könnt, bleibt die Datei unverändert.
+Der erste Befehl prüft euren tatsächlichen Markdown-Bestand. Funde nennen Datei und Zeile; bei einem Fund endet er mit Exitcode 1. Der zweite Befehl testet den Prüfer an temporären Dateien. Diese Testfälle sind keine Funde in eurem Bestand. Die [Prüfanleitung](pruefungen/README.md) erklärt Umfang und Grenzen. Der Prüfer prüft die Struktur. Ob Aussagen wahr sind, müsst ihr inhaltlich prüfen. Ohne Python könnt ihr Dateiköpfe und Links manuell prüfen; das ist kein ausgeführter Skriptlauf.
 
-Speichert vor einer größeren Änderung eine Kopie, etwa `mein-projekt-vorher.md`. Haltet in der Arbeitsdatei unter „Geprüfte Änderungen“ fest, was ihr übernommen habt und warum. Eine Empfehlung des Modells wird erst durch eure Entscheidung zur Vorgabe. Eine Annahme wird erst mit einem passenden Beleg zum bestätigten Stand.
+## Pflege und optionales Git
 
-Speichert die Datei und öffnet sie erneut. Kontrolliert, ob die Änderung vorhanden ist und offene Punkte noch als offen markiert sind. Der Chat aktualisiert eure lokale Datei nicht automatisch.
+Prüft den betroffenen Kontext vor jeder neuen Aufgabe und nach einer Entscheidung. Entfernt überholte Vorgaben oder kennzeichnet sie eindeutig. Im Team vereinbart ihr, wer welche Datei pflegt. Vermeidet gleichzeitiges Überschreiben derselben Datei. Legt vor größeren Änderungen eine Sicherung außerhalb des Kit-Ordners an.
 
-### 5. Beginnt erneut mit dem aktuellen Stand
+Git ist optional. Es protokolliert gespeicherte Fassungen und macht Änderungen vergleichbar. Wenn ihr Git bereits nutzt, nehmt das Kit in ein passendes Repository auf, prüft die Unterschiede und commitet nur die ausgewählten Dateien. Achtet darauf, wo ein späterer Push die Inhalte veröffentlicht. Der Einstieg funktioniert auch mit lokalen Sicherungskopien.
 
-Ändert für einen zweiten Durchlauf eine relevante Vorgabe. Ihr könnt dafür die Übungsänderung am Ende des gewählten Beispiels nutzen. Speichert die Änderung und fügt die ganze aktualisierte Datei mit demselben Prompt in einen neuen Chat ein. Damit prüft ihr den aktuellen Stand ohne die alte Unterhaltung als zusätzliche Quelle.
+Gebt nur Inhalte an ein Modell weiter, die ihr im gewählten Dienst verwenden dürft. Zugangsdaten gehören nicht in den Bestand. Klärt die Freigabe für vertrauliche oder personenbezogene Inhalte vor dem Einfügen.
 
-Kontrolliert, ob die Antwort die neue Vorgabe berücksichtigt. Wenn sie noch vom alten Stand ausgeht, prüft zuerst den eingefügten Inhalt. Speichert auch nach diesem Durchlauf ausschließlich Änderungen, die ihr selbst geprüft habt.
+## Quellen zum Artikel
 
-Der erste Einsatz ist abgeschlossen, wenn ihr eine nachvollziehbare nächste Handlung oder eine begründete Textänderung beurteilen könnt. Eure Arbeitsdatei enthält danach genau den Stand, den ihr bestätigt habt. Ein ungeklärter Punkt darf offen bleiben.
+Die im Artikel genannten Quellen, geprüft am 06.10.2026:
 
-## Was später hinzukommen kann
+- Anthropic: [Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents), 29.09.2025.
+- Mitchell Hashimoto: [My AI Adoption Journey](https://mitchellh.com/writing/my-ai-adoption-journey), 05.02.2026, Abschnitt „Engineer the Harness“.
+- Addy Osmani: [Loop Engineering](https://addyosmani.com/blog/loop-engineering/), 07.06.2026.
+- Teresa Torres im Podcast „Behind the Craft“ von Peter Yang: [Full Tutorial: Build Your Personal OS with Claude Code in 50 Min](https://creatoreconomy.so/p/automate-your-life-with-claude-code-teresa-torres), Dezember 2025, mit ihrem dreistufigen Kontextsystem.
+- Teresa Torres auf Product Talk: [Conversations with Claude: Can You Conduct a Content Audit?](https://www.producttalk.org/conversations-with-claude-content-audit/), 11.03.2026.
 
-Wenn ihr mehrere Fassungen vergleichen wollt, könnt ihr später Git zur Versionsverwaltung ergänzen. Ein Agent mit Dateizugriff kann das Einlesen und das Vorschlagen von Änderungen verbinden. Dann braucht ihr einen klar begrenzten Arbeitsordner und prüft die Änderungen vor der Übernahme. Für den hier beschriebenen Ablauf genügt das Kopieren von Text.
+## Lizenzvorschlag und Prüfgrenze
 
-## Grenzen des Kits
+Für die eigens erstellten Textvorlagen wird weiterhin CC BY 4.0 vorgeschlagen. Dieser Vorschlag ist keine Lizenzfreigabe. Vor Veröffentlichung sind Rechte und endgültiger Lizenzhinweis einschließlich des Prüfskripts zu klären. Das Kit behauptet keine Freigabe durch t3n.
 
-Das Paket ordnet eure Angaben und Prüfmaßstäbe. Es prüft keine externen Fakten und garantiert keine korrekten Modellantworten. Die Methode im Formularbeispiel ist für die Übung erfunden. Sie ist kein anerkannter Fachstandard. Eine Prüfung von Recht, Barrierefreiheit oder technischer Funktion ersetzt sie nicht.
-
-Die beiden Abläufe wurden redaktionell simuliert. Anschließend hat ein Subagent beide Beispiele mit ursprünglicher und geänderter Vorgabe bearbeitet. In diesen vier Antworten wurden die geltenden Vorgaben berücksichtigt. Der einzelne zusammenhängende Lauf ersetzt keine Nutzerstudie und keinen Vergleich verschiedener Modelle. Verständlichkeit für unerfahrene Leser und benötigte Zeit sind nicht gemessen. Der [redaktionelle Prüfbericht](redaktion/walkthrough.md) beschreibt die Prüfung und ihre Grenzen.
-
-## Vorschlag zur Lizenz
-
-Für die eigens erstellten Textvorlagen wird CC BY 4.0 vorgeschlagen. Die Herausgabe muss diesen Vorschlag vor Veröffentlichung bestätigen und den endgültigen Lizenzhinweis mit Urheberangabe und Lizenzverweis ergänzen. Hiermit wird noch keine Lizenzfreigabe erklärt. Fremde Texte, Bilder oder Fonts sind nicht Bestandteil des Pakets.
+Die Interviews sind Arbeitsanweisungen, deren Befolgung vom verwendeten Modell abhängt. Automatische Strukturtests belegen weder fachliche Richtigkeit noch Verständlichkeit oder Modellverhalten. Das Beispiel zeigt einen erfundenen Zusammenhang; es belegt keine Nutzerwirkung.
