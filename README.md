@@ -64,8 +64,10 @@ Die im Artikel genannten Quellen, geprüft am 06.10.2026:
 - Teresa Torres im Podcast „Behind the Craft“ von Peter Yang: [Full Tutorial: Build Your Personal OS with Claude Code in 50 Min](https://creatoreconomy.so/p/automate-your-life-with-claude-code-teresa-torres), Dezember 2025, mit ihrem dreistufigen Kontextsystem.
 - Teresa Torres auf Product Talk: [Conversations with Claude: Can You Conduct a Content Audit?](https://www.producttalk.org/conversations-with-claude-content-audit/), 11.03.2026.
 
-## Lizenzvorschlag und Prüfgrenze
+## Lizenz
 
-Für die eigens erstellten Textvorlagen wird weiterhin CC BY 4.0 vorgeschlagen. Dieser Vorschlag ist keine Lizenzfreigabe. Vor Veröffentlichung sind Rechte und endgültiger Lizenzhinweis einschließlich des Prüfskripts zu klären. Das Kit behauptet keine Freigabe durch t3n.
+Das Starterkit steht unter der Lizenz [Creative Commons Namensnennung 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.de), der Volltext liegt in `LICENSE`. Ihr dürft es nutzen, verändern und weitergeben, auch kommerziell, solange ihr David Latz als Urheber nennt und auf die Lizenz verweist.
+
+## Grenzen
 
 Die Interviews sind Arbeitsanweisungen, deren Befolgung vom verwendeten Modell abhängt. Automatische Strukturtests belegen weder fachliche Richtigkeit noch Verständlichkeit oder Modellverhalten. Das Beispiel zeigt einen erfundenen Zusammenhang; es belegt keine Nutzerwirkung.
